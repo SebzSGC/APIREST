@@ -1,4 +1,5 @@
 ﻿using APIREST.Models;
+using APIREST.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,44 +9,38 @@ using System.Web.Http;
 
 namespace APIREST.Controllers
 {
-    public object UsuarioData { get; private set; }
     public class UserController : ApiController
     {
-        private UsuarioData usuarioData;
-
-        public UserController()
-        {
-            usuarioData = new UsuarioData();
-        }
 
         // GET api/<controller>
         public List<User> Get()
         {
-            return usuarioData.Listar();
+            return UserData.GetAllUsers();
         }
 
         // GET api/<controller>/5
         public User Get(int id)
         {
-            return usuarioData.Obtener(id);
+            return UserData.GetUser(id);
         }
 
         // POST api/<controller>
         public bool Post([FromBody] User oUser)
         {
-            return usuarioData.Registrar(oUser);
+            return UserData.CreateUser(oUser);
         }
 
         // PUT api/<controller>/5
         public bool Put([FromBody] User oUser)
         {
-            return usuarioData.Modificar(oUser);
+
+            return UserData.UpdateUser(oUser);
         }
 
-        // DELETE api/<controller>/5
+        // delete api/<controller>/5
         public bool Delete(int id)
         {
-            return usuarioData.Eliminar(id);
+            return UserData.DeleteUser(id);
         }
     }
 }
