@@ -119,7 +119,7 @@ namespace APIREST.Data
         {
             using (SqlConnection oConexion = new SqlConnection(Connection.connectionString))
             {
-                SqlCommand cmd = new SqlCommand("InsertUser", oConexion);
+                SqlCommand cmd = new SqlCommand("UpdateUser", oConexion);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@idUser", oUser.Id);
                 cmd.Parameters.AddWithValue("@Documentation", oUser.Document);
