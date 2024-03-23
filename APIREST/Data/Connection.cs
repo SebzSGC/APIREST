@@ -7,6 +7,6 @@ namespace APIREST.Data
 {
     public class Connection
     {
-        public static string connectionString = "Data Source=SEBZ;Initial Catalog=DBpruebas1;Integrated Security=True";
+        public static string connectionString = "Data Source=LocalHost;Initial Catalog=DBpruebas1;Integrated Security=True";
     }
 }

@@ -121,6 +121,7 @@ namespace APIREST.Data
             {
                 SqlCommand cmd = new SqlCommand("UpdateUser", oConexion);
                 cmd.CommandType = CommandType.StoredProcedure;
+                //int
                 cmd.Parameters.AddWithValue("@idUser", oUser.Id);
                 cmd.Parameters.AddWithValue("@Documentation", oUser.Document);
                 cmd.Parameters.AddWithValue("@Names", oUser.Name);
